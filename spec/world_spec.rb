@@ -5,7 +5,6 @@ describe 'World' do
   subject(:world) {World.new(5, 5)}
   subject(:small_world) {World.new(3, 3)}
   subject(:large_world) {World.new(10, 10)}
-  let(:mock_cell) {double(:cell)}
 
   it "knows it\'s no. rows" do
     expect(world).to respond_to(:rows)
@@ -15,6 +14,14 @@ describe 'World' do
   end
 
   describe "#map" do
+    it "contains an array of arrays of cells" do
+      expect(world.map[0]).to all(be_a(Cell))
+      expect(world.map[1]).to all(be_a(Cell))
+      expect(world.map[2]).to all(be_a(Cell))
+      expect(world.map[3]).to all(be_a(Cell))
+      expect(world.map[4]).to all(be_a(Cell))
+    end
+
     describe "creates a map corresponding to arguments given" do
       it "creates a medium map" do
         expect(world.map.length).to eq(5)
@@ -31,8 +38,5 @@ describe 'World' do
         expect(large_world.map[0].length).to eq(10)
       end
     end
-    # it "contains an array of cells" do
-    #   expect(world.map).to be(a_kind_of(Cell))
-    # end
   end
 end

@@ -5,6 +5,7 @@ class World
     @columns = columns
     @map = Array.new(rows) do |r|
             Array.new(columns) do |c|
+              Cell.new
             end
           end
   end
