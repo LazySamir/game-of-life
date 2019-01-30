@@ -6,6 +6,7 @@ describe 'Cell' do
 
   it "initiazlises dead" do
     expect(cell.living).to eq(false)
+    expect(cell.next_living).to eq(false)
   end
 
   it "knows it's location" do
