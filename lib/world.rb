@@ -1,3 +1,4 @@
+
 class World
   attr_reader :rows, :columns, :map
   def initialize(rows, columns)
@@ -5,7 +6,7 @@ class World
     @columns = columns
     @map = Array.new(rows) do |r|
             Array.new(columns) do |c|
-              Cell.new
+              Cell.new(r, c)
             end
           end
   end
