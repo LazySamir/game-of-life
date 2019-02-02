@@ -24,4 +24,15 @@ describe 'Cell' do
       expect(mid_cell.living?).to eq(false)
     end
   end
+  describe '#next_living_toggle' do
+    it "toggles false to true" do
+      mid_cell.next_living_toggle
+      expect(mid_cell.next_living?).to eq(true)
+    end
+    it "toggles true to false" do
+      mid_cell.next_living_toggle
+      mid_cell.next_living_toggle
+      expect(mid_cell.next_living?).to eq(false)
+    end
+  end
 end
