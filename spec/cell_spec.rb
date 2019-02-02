@@ -12,4 +12,16 @@ describe 'Cell' do
   it "shows cell location" do
     expect(mid_cell.show_location).to eq([4][4])
   end
+
+  describe '#living_toggle' do
+    it "toggles false to true" do
+      mid_cell.living_toggle
+      expect(mid_cell.living?).to eq(true)
+    end
+    it "toggles true to false" do
+      mid_cell.living_toggle
+      mid_cell.living_toggle
+      expect(mid_cell.living?).to eq(false)
+    end
+  end
 end

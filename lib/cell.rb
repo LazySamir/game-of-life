@@ -10,6 +10,10 @@ class Cell
     @living
   end
 
+  def living_toggle
+    @living == false ? @living = true : @living = false
+  end
+
   def next_living?
     @next_living
   end
