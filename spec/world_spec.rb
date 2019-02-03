@@ -38,5 +38,10 @@ describe 'World' do
         expect(large_world.map[0].length).to eq(10)
       end
     end
+    describe "#find_living_neighbours" do
+      it "returns number of living neighbours" do
+        expect(world.find_living_neighbours(1,1)).to eq(0)
+      end
+    end
   end
 end

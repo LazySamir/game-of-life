@@ -8,7 +8,7 @@ describe 'Cell' do
     expect(cell.next_living?).to eq(false)
   end
   it "shows cell location" do
-    expect(mid_cell.show_location).to eq([4][4])
+    expect(mid_cell.show_location).to eq([4, 4])
   end
 
   describe '#living_toggle' do

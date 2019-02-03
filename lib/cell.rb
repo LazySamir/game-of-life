@@ -28,6 +28,6 @@ class Cell
   end
 
   def show_location
-    [@loc_x][@loc_y]
+    [@loc_x, @loc_y]
   end
 end
