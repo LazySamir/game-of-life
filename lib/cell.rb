@@ -14,14 +14,6 @@ class Cell
     @living == false ? @living = true : @living = false
   end
 
-  def next_living?
-    @next_living
-  end
-
-  def next_living_toggle
-    @next_living == false ? @next_living = true : @next_living = false
-  end
-
   def next_tick
     @living = @next_living
     @next_living = false
