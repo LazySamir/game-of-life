@@ -24,14 +24,8 @@ describe 'Cell' do
   end
   describe '#next_tick' do
     it "living is assigned to next_living" do
-      mid_cell.next_living_toggle
       mid_cell.next_tick
       expect(mid_cell.living?).to eq(true)
-    end
-    it "next_living variabele resets" do
-      mid_cell.next_living_toggle
-      mid_cell.next_tick
-      expect(mid_cell.next_living?).to eq(false)
     end
   end
 end

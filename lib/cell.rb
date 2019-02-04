@@ -16,7 +16,6 @@ class Cell
 
   def next_tick
     @living = @next_living
-    @next_living = false
   end
 
   def show_location
