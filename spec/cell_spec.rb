@@ -5,7 +5,6 @@ describe 'Cell' do
   subject(:mid_cell) {Cell.new(4, 4)}
   it "initiazlises dead" do
     expect(cell.living?).to eq(false)
-    expect(cell.next_living?).to eq(false)
   end
   it "shows cell location" do
     expect(mid_cell.show_location).to eq([4, 4])
@@ -23,9 +22,14 @@ describe 'Cell' do
     end
   end
   describe '#next_tick' do
-    it "living is assigned to next_living" do
-      mid_cell.next_tick
-      expect(mid_cell.living?).to eq(true)
+    xit "cell becomes dead when 'overpopulated'" do
+
+    end
+    xit "cell becomes dead when 'underpopulated'" do
+
+    end
+    xit 'cell becomes alive when in "reproduction"' do
+
     end
   end
 end
