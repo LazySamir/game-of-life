@@ -14,7 +14,7 @@ class World
     toggle = []
     @map.each do |array|
       array.each do |element|
-        living_neighbours = find_living_neighbours(element.show_location[0], element.show_location[1])
+        living_neighbours = find_living_neighbours(element.location[0], element.location[1])
         if (living_neighbours != (2 || 3)) && (element.living? == true)
           toggle << element
         end
@@ -36,7 +36,7 @@ private
     living_neighbours = 0
     @map.each do |array|
       array.each do |element|
-        if neighbour_locations(x,y).include?(element.show_location) && (element.living?)
+        if neighbour_locations(x,y).include?(element.location) && (element.living?)
           living_neighbours += 1
         end
       end

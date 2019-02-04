@@ -13,7 +13,7 @@ class Cell
     @living == false ? @living = true : @living = false
   end
 
-  def show_location
+  def location
     [@loc_x, @loc_y]
   end
 end
