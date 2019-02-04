@@ -21,15 +21,4 @@ describe 'Cell' do
       expect(mid_cell.living?).to eq(false)
     end
   end
-  describe '#next_tick' do
-    xit "cell becomes dead when 'overpopulated'" do
-
-    end
-    xit "cell becomes dead when 'underpopulated'" do
-
-    end
-    xit 'cell becomes alive when in "reproduction"' do
-
-    end
-  end
 end

@@ -38,10 +38,34 @@ describe 'World' do
         expect(large_world.map[0].length).to eq(10)
       end
     end
-    describe "#find_living_neighbours" do
-      it "returns number of living neighbours" do
-        expect(world.find_living_neighbours(1,1)).to eq(0)
-      end
+    # describe "#find_living_neighbours" do
+    #   it "returns number of living neighbours" do
+    #     expect(world.find_living_neighbours(1,1)).to eq(0)
+    #   end
+    # end
+  end
+  describe '#tick' do
+    it "cell becomes dead when 'overpopulated'" do
+      world.map[0][0].living_toggle
+      world.map[0][1].living_toggle
+      world.map[0][2].living_toggle
+      world.map[1][1].living_toggle
+      world.map[1][2].living_toggle
+      world.tick
+      expect(world.map[1][2].living?).to eq(false)
+    end
+    it "cell becomes dead when 'underpopulated'" do
+      world.map[0][0].living_toggle
+      world.map[0][1].living_toggle
+      world.tick
+      expect(world.map[0][0].living?).to eq(false)
+    end
+    it 'cell becomes alive when in "reproduction"' do
+      world.map[0][0].living_toggle
+      world.map[0][1].living_toggle
+      world.map[0][2].living_toggle
+      world.tick
+      expect(world.map[1][1].living?).to eq(true)
     end
   end
 end
