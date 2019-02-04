@@ -13,10 +13,6 @@ class Cell
     @living == false ? @living = true : @living = false
   end
 
-  def next_tick
-    # @living = @next_living
-  end
-
   def show_location
     [@loc_x, @loc_y]
   end
