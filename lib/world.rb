@@ -1,13 +1,12 @@
-
 class World
   attr_reader :rows, :columns, :map
 
   def initialize(rows, columns)
     @map = Array.new(rows) do |r|
-            Array.new(columns) do |c|
-              Cell.new(r, c)
-            end
-          end
+      Array.new(columns) do |c|
+        Cell.new(r, c)
+      end
+    end
   end
 
   def tick
@@ -23,20 +22,22 @@ class World
         end
       end
     end
-    toggle.each {|x| x.living_toggle}
+    toggle.each { |x| x.living_toggle }
   end
 
 private
 
-  def neighbour_locations(x, y)
-    [[x-1, y-1], [x-1, y], [x-1, y+1], [x-0, y-1], [x-0, y+1], [x+1, y-1], [x+1, y], [x+1, y+1]]
+  def neighbour_locations(x_axis, y_axis)
+    [[x_axis - 1, y_axis - 1], [x_axis - 1, y_axis], [x_axis - 1, y_axis + 1],
+     [x_axis - 0, y_axis - 1], [x_axis - 0, y_axis + 1],
+     [x_axis + 1, y_axis - 1], [x_axis + 1, y_axis], [x_axis + 1, y_axis + 1]]
   end
 
-  def find_living_neighbours(x,y)
+  def find_living_neighbours(x_axis, y_axis)
     living_neighbours = 0
     @map.each do |array|
       array.each do |element|
-        if neighbour_locations(x,y).include?(element.location) && (element.living?)
+        if neighbour_locations(x_axis, y_axis).include?(element.location) && element.living?
           living_neighbours += 1
         end
       end

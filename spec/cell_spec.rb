@@ -1,8 +1,8 @@
 require_relative '../lib/cell.rb'
 
 describe 'Cell' do
-  subject(:cell) {Cell.new}
-  subject(:mid_cell) {Cell.new(4, 4)}
+  subject(:cell) { Cell.new }
+  subject(:mid_cell) { Cell.new(4, 4) }
   it "initiazlises dead" do
     expect(cell.living?).to eq(false)
   end

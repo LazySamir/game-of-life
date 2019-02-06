@@ -2,9 +2,9 @@ require_relative '../lib/world.rb'
 require_relative '../lib/cell.rb'
 
 describe 'World' do
-  subject(:world) {World.new(5, 5)}
-  subject(:small_world) {World.new(3, 3)}
-  subject(:large_world) {World.new(10, 10)}
+  subject(:world) { World.new(5, 5) }
+  subject(:small_world) { World.new(3, 3) }
+  subject(:large_world) { World.new(10, 10) }
 
   it "knows it\'s no. rows" do
     expect(world).to respond_to(:rows)
