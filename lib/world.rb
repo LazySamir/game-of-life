@@ -17,11 +17,11 @@ private
 
   def cells_to_change
     cells = []
-    @map.each do |array|
-      array.each do |element|
-        living_neighbours = living_neighbours(element.location[0], element.location[1])
-        cells << element if (living_neighbours != (2 || 3)) && (element.living? == true)
-        cells << element if (living_neighbours == 3) && (element.living? == false)
+    @map.each do |ar|
+      ar.each do |el|
+        living = living_neighbours(el.location[0], el.location[1])
+        cells << el if (living != (2 || 3)) && (el.living? == true)
+        cells << el if (living == 3) && (el.living? == false)
       end
     end
     cells
@@ -34,14 +34,15 @@ private
   end
 
   def living_neighbours(x_axis, y_axis)
-    living_neighbours = 0
-    @map.each do |array|
-      array.each do |element|
-        if neighbour_locations(x_axis, y_axis).include?(element.location) && element.living?
-          living_neighbours += 1
+    living = 0
+    @map.each do |ar|
+      ar.each do |el|
+        if neighbour_locations(x_axis, y_axis).include?(el.location) && el.living?
+          living += 1
         end
       end
     end
-    living_neighbours
+    living
   end
+
 end
