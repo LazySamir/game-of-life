@@ -6,13 +6,6 @@ describe 'World' do
   subject(:small_world) { World.new(3, 3) }
   subject(:large_world) { World.new(10, 10) }
 
-  it "knows it\'s no. rows" do
-    expect(world).to respond_to(:rows)
-  end
-  it "knows it\'s no. columns" do
-    expect(world).to respond_to(:columns)
-  end
-
   describe "#map" do
     it "contains an array of arrays of cells" do
       expect(world.map[0]).to all(be_a(Cell))

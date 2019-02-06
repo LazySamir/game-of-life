@@ -1,5 +1,5 @@
 class World
-  attr_reader :rows, :columns, :map
+  attr_reader :map
 
   def initialize(rows, columns)
     @map = Array.new(rows) do |r|
@@ -44,5 +44,4 @@ private
     end
     living
   end
-
 end
