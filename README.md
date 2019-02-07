@@ -55,9 +55,8 @@ $ rubocop
 ```
 Test coverage is: 100% All tests are passing
 
-
 ### Remaining tasks
 
-Isolate unit tests
-Create rspec feature tests
-Consider moving some world logic to Cell
+- Isolate unit tests
+- Create rspec feature tests
+- Consider moving some world logic to Cell
